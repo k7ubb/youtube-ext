@@ -14,7 +14,7 @@ const onURLChanged = () => {
 			background: #f00;
 			z-index: 9999;
 		`;
-		const currentTime = document.getElementsByTagName("video")?.[0]?.currentTime ?? 0;
+		const currentTime = Math.floor(document.getElementsByTagName("video")?.[0]?.currentTime) ?? 0;
 		button.addEventListener("click", () => {
 			document.getElementsByTagName("video")?.[0]?.pause();
 			open(`https://www.youtube.com/embed/${videoID}?autoplay=1&start=${currentTime}`, "", "width=640,height=506");
