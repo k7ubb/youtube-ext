@@ -1,0 +1,19 @@
+{
+	"manifest_version" : 3,
+	"name" : "YouTube Window",
+	"version" : "1.0.0",
+	"description": "YouTube Window Open",
+	"permissions": [
+		"webNavigation",
+		"tabs"
+	],
+	"background": {
+		"service_worker" : "background.js"
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://*.youtube.com/*"],
+			"js": ["embed.js"]
+		}
+	]
+}
